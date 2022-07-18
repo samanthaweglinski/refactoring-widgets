@@ -16,13 +16,13 @@ function Weather() {
     );
   }
 
-  useEffect(() => (
+  useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       pollWeather,
       (err) => console.log(err),
       { timeout: 10000 }
     )
-  ), [])
+    }, [])
 
   const pollWeather = async (location) => {
     let url = 'http://api.openweathermap.org/data/2.5/weather?';
